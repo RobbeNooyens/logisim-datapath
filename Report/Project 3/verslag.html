@@ -1,0 +1,282 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verslag Project 3 | Robbe en Yousra</title>
+    <!-- Het "u" element (underline) is geherdefinieerd voor overline -->
+    <style type="text/css">
+        u {
+            text-decoration: overline;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #page-grid {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1200px) {
+            #left {
+                width: 300px;
+                position: fixed;
+                /* Fixed Sidebar (stay in place on scroll) */
+                z-index: 1;
+                /* Stay on top */
+                top: 0;
+                /* Stay at the top */
+                left: 0;
+            }
+
+            #right {
+                margin-left: 300px;
+                padding: 0 1rem;
+                max-width: 100%-300px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #page-grid {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+            }
+
+            #left {
+                width: 100%;
+            }
+        }
+
+        #left {
+            padding: 0.2rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .card {
+            margin: 1rem 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        .collaborator {
+            padding: 0.5rem 0;
+        }
+
+        .navitem {
+            padding-left: 0.5rem;
+        }
+
+        .navitem a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            color: grey;
+        }
+
+        #bestanden {
+            max-height: 30%;
+            overflow-y: auto;
+            margin-top: 0.5rem;
+        }
+
+        .bestand {
+            margin-bottom: 0.5rem;
+        }
+
+        .bestand a {
+            color: black;
+        }
+
+        .bestand a:hover {
+            color: grey;
+        }
+
+        #right {
+            width: 100%;
+            height: 100%;
+            padding: 0.2rem;
+        }
+
+        #right #header {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        #right #header #h1 {
+            margin-top: 5em;
+        }
+
+        #right img {
+            width: 40em;
+            height: auto;
+        }
+
+        #content {
+            padding: 1.5rem;
+            background-color: white;
+            margin-bottom: 0.7rem;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        #content hr {
+            margin: 2rem 0;
+        }
+
+        #subtitle hr {
+            width: 10rem;
+            margin: auto;
+            margin-bottom: 5rem;
+            background-color: blue;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="page-grid" class="grid-container">
+        <div id="left">
+            <div id="collaborators" class="card">
+                <b>Dit verslag werd opgesteld door:</b>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Yousra Smits</i><br>
+                    <b>Studentennummer:</b> <i>20201267</i><br>
+                    <b>Email adres:</b> <i>Yousra.Smits@student.uantwerpen.be</i>
+                </div>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Robbe Nooyens</i><br>
+                    <b>Studentennummer:</b> <i>20201010</i><br>
+                    <b>Email adres:</b> <i>Robbe.Nooyens@student.uantwerpen.be</i>
+                </div>
+            </div>
+            <div id="project-info" class="card">
+                <b>Aantal man-uren besteed:</b> <i>14 uur</i><br>
+                <b>Moeilijkheidsgraad:</b> <i>7</i> /10
+            </div>
+            <div id="navigation" class="card">
+                <b>Opdrachten:</b>
+                <div class="navitem">
+                    <a href="#1">ALU</a>
+                </div>
+                <div class="navitem">
+                    <a href="#2">Logic</a>
+                </div>
+                <div class="navitem">
+                    <a href="#3">Numeric Calculations</a>
+                </div>
+                <div class="navitem">
+                    <a href="#4">Comparisons</a>
+                </div>
+                <div class="navitem">
+                    <a href="#5">Shifting</a>
+                </div>
+                <div class="navitem">
+                    <a href="#6">Other</a>
+                </div>
+            </div>
+            <div id="bijlagen" class="card">
+                <b>De oplossing bestaat uit de volgende bestanden:</b>
+                <div id="bestanden">
+                    <div class="bestand">
+                        <a href="ALU_Group42.circ">ALU_Group.24.circ</a>:
+                        ALU
+                    </div>
+                    <div class="bestand">
+                        <a href="Project2.circ">Project2.circ</a>:
+                        16 Bit CLA van project 2
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="content">
+                <div id="header">
+                    <h1>Project 3: Arithmetic Logic Unit</h1>
+                </div>
+                <div id="subtitle">
+                    <hr>
+                </div>
+                <h3 id="1">ALU</h3>
+                <p>Project 3 draait om het maken van een eigen Arithmetic Logic Unit, afgekort ALU. We maken een 16-bit
+                    ALU die 16 verschillende operaties uit kan voeren. De operatie wordt geselecteerd op basis van een
+                    4-bit input en genereert een overflow indien er tijdens de geselecteerde operatie een overflow
+                    ontstaat. We kunnen de overflow dus interpreteren als een error indicator. Voor dit circuit
+                    gebruiken we de Wiring, Gates en Plexers standaard libraries van Logisim en onze eigen gemaakte
+                    16-bit CLA. We bespreken eerst de ALU in het algemeen waarna we dieper ingaan op elk component.<br>
+                    Links staan de 2 16-bit inputs die we labelen met 'a' en 'b'. We spreken af dat als een component
+                    slechts 1 input heeft zoals de inverse operatie, dat we de bovenste input met het label 'a'
+                    gebruiken. Bovenaan komt de selector input binnen van onze ALU die gaat bepalen welke operatie
+                    uitgevoerd moet worden. Via een tunnel wordt deze waarde naar de multiplexors rechts en onderaan
+                    gestuurd. De multiplexor rechts zorgt voor de output van de juiste operatie, de multiplexor onderaan
+                    zorgt dat de juiste overflow geselecteerd wordt.
+                </p>
+                <img src="ALU.jpg">
+                <hr>
+                <h3 id="2">Logic</h3>
+                <p>De eerste groep componenten die we bespreken zijn de logische operaties. Dit was een makkelijke
+                    opgave aangezien de circuits bestaan uit slechts 1 standaard logische poort. We hebben alleen de
+                    input bits aangepast waarna het werkte.</p>
+                <img src="LogicOps.jpg">
+                <hr>
+                <h3 id="3">Numeric Calculations</h3>
+                <p>De tweede groep is die van de numerieke berekeningen, zijnde het optellen en aftrekken. Het optellen
+                    was niet moeilijk aangezien we de 16-bit adder konden gebruiken van project 2. Het aftrekken was
+                    iets lastiger. Aangezien a - b gelijk is aan a + (-b), berekenen we eerst de inverse van b. De som
+                    van a en de inverse van b geeft het resultaat van de aftrekking. Een overflow wordt genereert
+                    wanneer ofwel de inverse ofwel de adder een overflow geeft.</p>
+                <img src="NumericOps.jpg">
+                <hr>
+                <h3 id="4">Comparisons</h3>
+                <p>De derde groep is die van de vergelijkingen. De output van deze operaties zijn dus 0 of 1. We zijn
+                    begonnen met een groter dan circuit. Hiervoor vergeleken we alle mogelijke cases in een truth table.
+                    0 komt overeen met een positief getal of false en 1 met een negatief getal of true.</p>
+                <img src="GreaterThanTruthTable.jpg">
+                <p>We implementeren deze logica met behulp van een multiplexer. Het enige waar we dan nog rekening mee
+                    moeten houden zijn de gevallen waarbij a gelijk is aan b. We voegen dus toe dat als a gelijk is aan
+                    b, we 0 teruggeven en anders het resultaat van de vorige multiplexer. De bit extender zorgt ervoor
+                    dat de 1 bit output een 16 bit output wordt die de multiplexer in de ALU kan lezen. Voor het circuit
+                    van kleiner dan wisselen we de inputs a en b om in de GT component. Als a namelijk niet gelijk aan
+                    of groter is dan b, dan is het kleiner dan b.</p>
+                <img src="LessThanGreaterThan.jpg">
+                <p>Twee inputs zijn hetzelfde als elke i-de bit van a gelijk is aan de i-de bit van b. We kunnen dit
+                    gedrag nabootsen met een NXOR gate. Daarna kijken we of de NXOR operatie voor elke bit 1 wordt en
+                    extenden we de 1 bit naar een 16 bit output. De not equals operatie was daarna niet moeilijk meer,
+                    de not operatie op de eerste bit van de output van de equals operatie geeft true als a en b niet
+                    gelijk zijn en 0 als ze wel gelijk zijn.</p>
+                <img src="EqualsNotEquals.jpg">
+                <hr>
+                <h3 id="5">Shifting</h3>
+                <p>Er zijn twee manieren om bits te shiften. De eerste manier is de bits op logische wijze te shiften.
+                    Bij de SLL voegen we een 0 toe voor de eerste bit en nemen we de eerste tot de 16de bit van de
+                    nieuwe 17 bit waarde. Bij de SRL voegen we een 0 toe op het einde en nemen we de 2de tot 17de bit.
+                </p>
+                <img src="ShiftLogical.jpg">
+                <p>De andere manier is de shift arithmetic. Hierbij delen en vermenigvuldigen we met 2. We doen
+                    hetzelfde als bij de shift logical en moeten hiervoor niet veel veranderen, buiten een overflow toe
+                    te voegen aan de SLA als ofwel de laatste ofwel de voorlaatste bit true is. Bij de SRA doen we ook
+                    hetzelfde, maar voegen we de waarde van de 16de bit toe in plaats van 0.</p>
+                <img src="ShiftArithmetic.jpg">
+                <hr>
+                <h3 id="6">Other</h3>
+                <p>De laatste categorie omvat de invert, no-operation en zero operation. Deze waren alle drie tamelijk
+                    makkelijk. De zero geeft een constante 0x0 als output en de no-operation geeft de input gelijk
+                    terug. De inverse is het complement van a plus 1.</p>
+                <img src="Others.jpg">
+                <p>Al deze componenten vormen samen dus een ALU, hetgeen we hoorden te maken voor dit project.</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

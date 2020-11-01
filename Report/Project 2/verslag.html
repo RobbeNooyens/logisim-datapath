@@ -1,0 +1,293 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verslag Project 2 | Robbe en Yousra</title>
+    <!-- Het "u" element (underline) is geherdefinieerd voor overline -->
+    <style type="text/css">
+        u {
+            text-decoration: overline;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #page-grid {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1200px) {
+            #left {
+                width: 300px;
+                position: fixed;
+                /* Fixed Sidebar (stay in place on scroll) */
+                z-index: 1;
+                /* Stay on top */
+                top: 0;
+                /* Stay at the top */
+                left: 0;
+            }
+
+            #right {
+                margin-left: 300px;
+                padding: 0 1rem;
+                max-width: 100%-300px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #page-grid {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+            }
+
+            #left {
+                width: 100%;
+            }
+        }
+
+        #left {
+            padding: 0.2rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .card {
+            margin: 1rem 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        .collaborator {
+            padding: 0.5rem 0;
+        }
+
+        .navitem {
+            padding-left: 0.5rem;
+        }
+
+        .navitem a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            color: grey;
+        }
+
+        #bestanden {
+            max-height: 30%;
+            overflow-y: auto;
+            margin-top: 0.5rem;
+        }
+
+        .bestand {
+            margin-bottom: 0.5rem;
+        }
+
+        .bestand a {
+            color: black;
+        }
+
+        .bestand a:hover {
+            color: grey;
+        }
+
+        #right {
+            width: 100%;
+            height: 100%;
+            padding: 0.2rem;
+        }
+
+        #right #header {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        #right #header #h1 {
+            margin-top: 5em;
+        }
+
+        #right img {
+            width: 40em;
+            height: auto;
+        }
+
+        #content {
+            padding: 1.5rem;
+            background-color: white;
+            margin-bottom: 0.7rem;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        #content hr {
+            margin: 2rem 0;
+        }
+
+        #subtitle hr {
+            width: 10rem;
+            margin: auto;
+            margin-bottom: 5rem;
+            background-color: blue;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="page-grid" class="grid-container">
+        <div id="left">
+            <div id="collaborators" class="card">
+                <b>Dit verslag werd opgesteld door:</b>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Yousra Smits</i><br>
+                    <b>Studentennummer:</b> <i>20201267</i><br>
+                    <b>Email adres:</b> <i>Yousra.Smits@student.uantwerpen.be</i>
+                </div>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Robbe Nooyens</i><br>
+                    <b>Studentennummer:</b> <i>20201010</i><br>
+                    <b>Email adres:</b> <i>Robbe.Nooyens@student.uantwerpen.be</i>
+                </div>
+            </div>
+            <div id="project-info" class="card">
+                <b>Aantal man-uren besteed:</b> <i>11 uur</i><br>
+                <b>Moeilijkheidsgraad:</b> <i>6</i> /10
+            </div>
+            <div id="navigation" class="card">
+                <b>Opdrachten:</b>
+                <div class="navitem">
+                    <a href="#1">Oefening 1</a>
+                </div>
+                <div class="navitem">
+                    <a href="#2">Oefening 2</a>
+                </div>
+                <div class="navitem">
+                    <a href="#3">Oefening 3</a>
+                </div>
+                <div class="navitem">
+                    <a href="#4">Oefening 4</a>
+                </div>
+            </div>
+            <div id="bijlagen" class="card">
+                <b>De oplossing bestaat uit de volgende bestanden:</b>
+                <div id="bestanden">
+                    <div class="bestand">
+                        <a href="oefening_1.circ">oefening_1.circ</a>:
+                        Circuit Oefening 1
+                    </div>
+                    <div class="bestand">
+                        <a href="oefening_2.circ">oefening_2.circ</a>:
+                        Circuit Oefening 2
+                    </div>
+                    <div class="bestand">
+                        <a href="oefening_3.circ">oefening_3.circ</a>:
+                        Circuit Oefening 3-4
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="content">
+                <div id="header">
+                    <h1>Project 2: Adders</h1>
+                </div>
+                <div id="subtitle">
+                    <hr>
+                </div>
+                <h3 id="1">Oefening 1: 1-Bit Full Adder</h3>
+                <p>Het eerste deel van dit project is het maken van een 1-bit full adder. Dit betekent dat we een
+                    component gaan maken met twee inputs en 2 outputs, waaronder de binary som en de carry.
+                    We gaan na wanneer de som gelijk is aan 1 en wanneer de carry gelijk is aan 1. Met een truth
+                    table krijgen we hier snel een overzichtelijke samenvatting van:</p>
+                <br>
+                <img src="truthtable1.png" alt="Truthtable oefening 1" width="297" height="297" />
+                <br>
+                <p>
+                    <b>Formule:</b><br />
+                    Uit de truthtabel maakten we volgende booleaanse uitdrukkingen:<br />
+                    <br />
+                    Sum = <u>a</u> . <u>b</u> . CarryIn + <u>a</u> . b . <u>CarryIn</u> + a . <u>b</u> . <u>CarryIn</u>
+                    + a . b . CarryIn <br />
+                    CarryOut = <u>a</u> . b . CarryIn + a . <u>b</u> . CarryIn + a . b . <u>CarryIn</u> + a . b .
+                    CarryIn
+                </p>
+                <p>Door bovenstaande formules correct te implementeren in het circuit kun je de 1-bit adder correct
+                    bouwen.</p>
+                <p>
+                    <b>Circuit:</b><br />
+                    <img src="oefening_1.png" alt="Circuit oefening 1" width="1365" height="829" />
+                </p>
+                <br>
+                <hr>
+                <h3 id="2">Oefening 2: 16-bit ripple carry adder</h3>
+                <p>Deze component is niet al te moeilijk als de 1-bit adder werkt. We schakelden 16 van onze 1-bit
+                    adders aan elkaar die elk input krijgen van de gesplitte 16-bit inputs en die hun carry's doorgeven.
+                </p>
+                <br>
+                <img src="oefening_2.png" alt="Circuit oefening 2" width="953" height="628" />
+                <br>
+                <hr>
+                <h3 id="3">Oefening 3:</h3>
+                <br>
+                <p><b>4-bit adder:</b><br /></p>
+                <p>
+                    Als voorbereiding op de 16-bit CLA maakten we alvast een 4-bit CLA. Een 'Carry Lookahead Adder',
+                    afgekort CLA, is een component dat de carries op voorhand berekent.
+                    We baseerden ons op de volgende formules om de carry's, (super)propagate en
+                    (super)generate te berekenen uit de slides van les over adders:
+                </p>
+                <img src="oefening_3_formules.png" alt="Formules oefening 3" width="357" height="258" />
+                <br>
+                <p>Daarna restte ons enkel nog de taak om de berekende carry's samen met de inputs om te zetten
+                    in een som. We gebruikten exclusive OR's om alle gevallen waarin een som een 1 wordt na te
+                    kijken.
+                    Door elk maalteken te vertalen naar een AND gate en elke somteken te vertalen naar een OR
+                    gate,
+                    kwamen we tot het volgende circuit:</p>
+                <br>
+                <img src="oefening3_4bitadder.png" alt="4-bit CLA" width="521" height="689" />
+                <br>
+                <p>Deze 4-Bit CLA doet twee dingen, met name de carries en de sommen berekenen. Om het overzichtelijker
+                    te maken en later componenten te kunnen hergebruiken, kunnen ze deze functionaliteiten uit elkaar
+                    trekken
+                    door een algemene Carry Lookahead Unit te maken. Deze ziet er hetzelfde uit als de CLA die we reeds
+                    hebben,
+                    maar bevat enkel de berekeningen voor de propagates en generates.</p>
+                <br>
+                <p><b>Carry-lookahead Unit:</b></p>
+                <br>
+                <img src="oefening3_CLU.png" alt="Carry-lookahead Unit" width="404" height="806" />
+                <br>
+                <p><b>16-bit adder:</b></p>
+                <p>Aangezien we bij deze optelling geen carry moeten berekenen, kunnen we een kortere 1-bit adder
+                    gebruiker:</p>
+                <br>
+                <img src="oefening3_mini1bitadder.png" alt="Mini 1-bit adder" width="373" height="163" />
+                <br>
+                <p>De 16-bit adder wordt uiteindelijk dit:</p>
+                <br>
+                <img src="oefening3_16bitAdder.png" alt="16-bit adder" width="817" height="478" />
+                <br>
+                <hr>
+                <h3 id="4">Oefening 4: Adders Testen</h3>
+                <p>Om te testen of de adders werken, geven we dezelfde input aan de 16-bit ripple adder en de 16-bit
+                    CLA.</p>
+                <br>
+                <img src="oefening4_test.png" alt="Testing the adders" width="620" height="347" />
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
