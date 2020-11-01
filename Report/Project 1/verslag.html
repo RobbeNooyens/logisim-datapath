@@ -208,7 +208,7 @@
                 <h3 id="1">Oefening 1: Bewijzen van De Morgan's stellingen</h3>
                 <p><b>1.a:</b></p>
                 <p>
-                    De eerste stelling die we bewijzen luidt als volgt: <u>A + B</u> = <u>A</u> · <u>B</u><br>
+                    De eerste stelling die we bewijzen luidt als volgt: <u>A + B</u> = <u>A</u> &middot; <u>B</u><br>
                     Hiervoor stellen we volgende truth table op:
                 </p>
                 <br>
@@ -221,12 +221,12 @@
                     operatie op A en B respectievelijk. De laatste kolom toont de OR operatie van kolom 5 en 6, wat
                     het rechterdeel van de vergelijking is. Nu vergelijken we kolom 4 en 7. We zien dat elke rij van
                     kolom 4 inderdaad gelijk is aan elke rij van kolom 7. <br>
-                    <b>Hieruit kunnen we besluiten dat <u>A + B</u> = <u>A</u> · <u>B</u>.</b>
+                    <b>Hieruit kunnen we besluiten dat <u>A + B</u> = <u>A</u> &middot; <u>B</u>.</b>
                 </p>
                 <br>
                 <p><b>1.b:</b></p>
                 <p>
-                    De tweede stelling luidt als volgt: <u>A</u> · <u>B</u> =<u>A + B</u><br>
+                    De tweede stelling luidt als volgt: <u>A</u> &middot; <u>B</u> =<u>A + B</u><br>
                     We stellen op dezelfde manier een truth table op, maar we wisselen de AND en OR gates om:
                 </p>
                 <br>
@@ -236,23 +236,45 @@
                 <p>We bewijzen volgende stelling:</p>
                 <p>
                     <i>
-                        E = ((A · B) + (A · C) + (B · C)) · (<u>A · B · C</u>) <br />
-                        ⇐⇒ E = (A · B · <u>C</u>) + (A · <u>B</u> · C) + (<u>A</u> · B · C)
+                        E = ((A &middot; B) + (A &middot; C) + (B &middot; C)) &middot; (<u>A &middot; B &middot; C</u>)
+                        <==> E = (A &middot; B &middot; <u>C</u>) + (A &middot; <u>B</u> &middot; C) + (<u>A</u>
+                            &middot; B &middot; C)
                     </i>
                 </p>
                 <p>
                     We doen dit door te vertrekken vanuit de eerste stelling en de expressie zo om te vormen dat we
-                    de stelling aan de rechterkan uitkomen.
+                    de stelling aan de rechterkant uitkomen.
                 </p>
-                <br>
                 <p>
                     Stap 1: <i>Distributivity</i><br />
                     Stap 2: <i>De Morgan's laws</i><br />
                     Step 3: <i>Distributive law</i><br />
-                    Step 4: <i>Distributive law</i><br />
-                    Step 5: <i>Null law</i>
-                </p><br />
-                <img src="oefening2.png" alt="Uitwerking oefening 2" width="813" height="227" />
+                    Step 4: <i>complement law</i><br />
+                    Step 5: <i>Null law</i><br>
+                    Step 6: <i>commutativity law</i><br>
+                    Step 7: <i>commutativity law</i>
+                </p>
+                <p>
+                    LL = ((A &middot; B) + (A &middot; C) + (B &middot; C)) &middot; (<u>A &middot; B &middot;
+                        C</u>)<br>
+                    = (<u>A &middot; B &middot; C</u>)(A &middot; B) + (<u>A &middot; B &middot; C</u>)(A &middot; C)
+                    +(<u>A &middot; B &middot; C</u>) (B &middot; C)<br>
+                    = (<u>A</u> + <u>B</u> + <u>C</u>)&middot;(A &middot; B) + (<u>A</u> + <u>B</u> +
+                    <u>C</u>)&middot;(A &middot; C) + (<u>A</u> + <u>B</u> + <u>C</u>) &middot; (B &middot; C)<br>
+                    = (A &middot; B &middot; <u>A</u> + A &middot; B &middot; <u>B</u> + A &middot; B &middot; <u>C</u>)
+                    + (A &middot; C &middot; <u>A</u> + A &middot; C &middot; <u>B</u> + A &middot; C &middot;
+                    <u>C</u>)+(B &middot; C &middot; <u>A</u> + B &middot; C &middot; <u>B</u> + B &middot; C &middot;
+                    <u>C</u>)<br>
+                    = (0&middot;B + A&middot;0 + A &middot; B &middot; <u>C</u>)+(0&middot;C + A &middot; C &middot;
+                    <u>B</u> + A&middot;0) + (B &middot; C &middot; <u>A</u> + 0&middot;C + B&middot;0)<br>
+                    = (A &middot; B &middot; <u>C</u>) + (A &middot; C &middot; <u>B</u>) + (B &middot; C &middot;
+                    <u>A</u>)<br>
+                    = (A &middot; B &middot; <u>C</u>) + (A &middot; <u>B</u> &middot; C) + (<u>A</u> &middot; B
+                    &middot; C)<br>
+                    = (<u>A</u> &middot; B &middot; C) + (A &middot; <u>B</u> &middot; C) + (A &middot; B &middot;
+                    <u>C</u>)<br>
+                    =RL
+                </p>
                 <p>Hiermee is bovenstaande stelling bewezen.</p>
                 <hr>
                 <h3 id="3">Oefening 3: NAND Gate</h3>
@@ -277,7 +299,7 @@
                     </li>
                     <li>
                         <b>OR:</b> Bij de OR gate denken we aan De Morgans stellingen en leiden we ze af tot:
-                        A + B = <u>NOT(A · A) · NOT(B · B)</u>
+                        A + B = <u>NOT(A &middot; A) &middot; NOT(B &middot; B)</u>
                     </li>
                     <li><b>NOT:</b> Zoals eerder gezegd, gedraagt een NAND gate met slecthts 1 input zich als een NOT
                         gate.</li>
