@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verslag Project 1 - Robbe en Yousra</title>
+    <!-- Het "u" element (underline) is geherdefinieerd voor overline -->
+    <style type="text/css">
+        u {
+            text-decoration: overline;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="page-grid" class="grid-container">
+        <div id="left">
+            <div id="collaborators" class="card">
+                <b>Dit verslag werd opgesteld door:</b>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Yousra Smits</i><br>
+                    <b>Studentennummer:</b> <i>20201267</i><br>
+                    <b>Email adres:</b> <i>Yousra.Smits@student.uantwerpen.be</i>
+                </div>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Robbe Nooyens</i><br>
+                    <b>Studentennummer:</b> <i>20201010</i><br>
+                    <b>Email adres:</b> <i>Robbe.Nooyens@student.uantwerpen.be</i>
+                </div>
+            </div>
+            <div id="project-info" class="card">
+                <b>Aantal man-uren besteed:</b> <i>30 uur</i><br>
+                <b>Moeilijkheidsgraad:</b> <i>6</i> /10
+            </div>
+            <div id="navigation" class="card">
+                <b>Opdrachten:</b>
+                <div class="navitem">
+                    <a href="#1">Oefening 1</a>
+                </div>
+                <div class="navitem">
+                    <a href="#2">Oefening 2</a>
+                </div>
+                <div class="navitem">
+                    <a href="#3">Oefening 3</a>
+                </div>
+                <div class="navitem">
+                    <a href="#4">Oefening 4</a>
+                </div>
+                <div class="navitem">
+                    <a href="#5">Oefening 5</a>
+                </div>
+            </div>
+            <div id="bijlagen" class="card">
+                <b>De oplossing bestaat uit de volgende bestanden:</b>
+                <div id="bestanden">
+                    <div class="bestand">
+                        <a href="Project1Oef3.circ">Project1Oef3.circ</a>:
+                        Eigen NAND gate en AND, OR en NOT gate gemaakt met NAND gates
+                    </div>
+                    <div class="bestand">
+                        <a href="Project1Oef4.circ">Project1Oef4.circ</a>:
+                        Logisim implementatie van de truth table
+                    </div>
+                    <div class="bestand">
+                        <a href="Project1Oef5.circ">Project1Oef5.circ</a>:
+                        7 segment display
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="content">
+                <div id="header">
+                    <h1>Project 1: Gates and Wires</h1>
+                </div>
+                <div id="subtitle">
+                    <hr>
+                </div>
+                <h3 id="1">Oefening 1: Bewijzen van De Morgan's stellingen</h3>
+                <p><b>1.a:</b></p>
+                <p>
+                    De eerste stelling die we bewijzen luidt als volgt: <u>A + B</u> = <u>A</u> · <u>B</u><br>
+                    Hiervoor stellen we volgende truth table op:
+                </p>
+                <br>
+                <img src="oefening1a.png" alt="truthtable oefening 1.a." />
+                <br>
+                <p>
+                    In kolom 1 en 2 staan alle combinaties die gevormd kunnen worden met twee binaire variabelen
+                    A en B. Kolom 3 bevat de logische AND operatie van A en B. Kolom 4 is de NOT operatie op
+                    kolom 3, dus het linkerdeel van de vergelijking. Kolom 5 en 6 zijn het resultaat van de NOT
+                    operatie op A en B respectievelijk. De laatste kolom toont de OR operatie van kolom 5 en 6, wat
+                    het rechterdeel van de vergelijking is. Nu vergelijken we kolom 4 en 7. We zien dat elke rij van
+                    kolom 4 inderdaad gelijk is aan elke rij van kolom 7. <br>
+                    <b>Hieruit kunnen we besluiten dat <u>A + B</u> = <u>A</u> · <u>B</u>.</b>
+                </p>
+                <br>
+                <p><b>1.b:</b></p>
+                <p>
+                    De tweede stelling luidt als volgt: <u>A</u> · <u>B</u> =<u>A + B</u><br>
+                    We stellen op dezelfde manier een truth table op, maar we wisselen de AND en OR gates om:
+                </p>
+                <br>
+                <img src="oefening1b.png" alt="truthtable oefening 1.b." />
+                <hr>
+                <h3 id="2">Oefening 2: Bewijs met Booleaanse algebra</h3>
+                <p>We bewijzen volgende stelling:</p>
+                <p>
+                    <i>
+                        E = ((A · B) + (A · C) + (B · C)) · (<u>A · B · C</u>) <br />
+                        ⇐⇒ E = (A · B · <u>C</u>) + (A · <u>B</u> · C) + (<u>A</u> · B · C)
+                    </i>
+                </p>
+                <p>
+                    We doen dit door te vertrekken vanuit de eerste stelling en de expressie zo om te vormen dat we
+                    de stelling aan de rechterkan uitkomen.
+                </p>
+                <br>
+                <p>
+                    Stap 1: <i>Distributivity</i><br />
+                    Stap 2: <i>De Morgan's laws</i><br />
+                    Step 3: <i>Distributive law</i><br />
+                    Step 4: <i>Distributive law</i><br />
+                    Step 5: <i>Null law</i>
+                </p><br />
+                <img src="oefening2.png" alt="Uitwerking oefening 2" width="813" height="227" />
+                <p>Hiermee is bovenstaande stelling bewezen.</p>
+                <hr>
+                <h3 id="3">Oefening 3: NAND Gate</h3>
+                <h4>NAND gate:</h4>
+                Om een NAND gate te maken zijn er twee mogelijkheden (zie onderstaande afbeelding):
+                <ul>
+                    <li>Je kunt een NAND gate maken door simpelweg een NOT gate te plaatsen na de output van een AND
+                        gate,</li>
+                    <li>of je kijkt naar De Morgans stellingen en plaats je NOT gates aan de inputs van een OR gate.
+                    </li>
+                </ul>
+                <br>
+                <h4>Testen van de NAND gate:</h4>
+                <p><i>Bij deze deeloefening gebruiken we onze 2de NAND gate contructie.</i></p>
+                <p>Om te tonen dat deze NAND gate functioneel compleet is, maakten we de volgende 3 poorten AND, OR en
+                    NOT:</p>
+                <ul>
+                    <li>
+                        <b>AND:</b> Een NAND gate gedraagt zich als een NOT gate als beide inputs gelijk te zijn,
+                        dus als je de output van een NAND gate terug door een NAND gate te laten gaan, krijg je
+                        hetzelfde als een normale AND gate.
+                    </li>
+                    <li>
+                        <b>OR:</b> Bij de OR gate denken we aan De Morgans stellingen en leiden we ze af tot:
+                        A + B = <u>NOT(A · A) · NOT(B · B)</u>
+                    </li>
+                    <li><b>NOT:</b> Zoals eerder gezegd, gedraagt een NAND gate met slecthts 1 input zich als een NOT
+                        gate.</li>
+                </ul>
+
+                <img src="oefening3.png" alt="Oefening 3" width="696" height="493" />
+                <hr>
+                <h3 id="4">Oefening 4: Logisim implementatie van een truth table</h3>
+                <p>
+                    Deze probleemstelling was heel uitdagend. Daarom hebben we het opgedeeld in twee
+                    deelproblemen. Eerst probeerden we een circuit te maken die de juiste output voor X gaf. Het
+                    viel ons op dat waarde 1 voor B altijd 0 als resultaat gaf. Dit gaf ons dus een vermoeden dat
+                    het
+                    circuit van B to X bestond uit OR gates en een NOT gate. Dit was ook het geval indien A en C
+                    beiden 1 waren. Na nog 1 AND gate toe te voegen tussen B en C werkte het circuit naar behoren.
+                    Daarna keken we naar wat we aan moesten passen om Y te laten kloppen.
+                    Hier hadden we slechts een extra AND gate voor nodig. Na deze laatste wijziging was het hele circuit
+                    klaar.
+                </p>
+                <img src="oefening4.png" alt="Oefening 4" width="602" height="188" />
+                <hr>
+                <h3 id="5">Oefening 5: 7 segment display</h3>
+                <p>
+                    De laatste opdracht van dit project was het bouwen van een 7 segment display. Om het iets
+                    minder overweldigend te maken, hebben we de logica eerst omgezet in een<b> truth table:</b>
+                </p>
+                <br>
+                <img src="truthtable5.png" alt="Truth Table Oefening 5" width="558" height="318" />
+                <br>
+                <p>
+                    Het voordeel hiervan is dat we een overzicht krijgen van welke waarden invloed hebben op een
+                    bepaalde segment. Na de tabel opgesteld te hebben, maakten we een decoder die de drie inputs
+                    omzette in een getal met behulp van AND gates met ignored input ports. Daarna konden we kolom
+                    per kolom afgaan welke waarden op 0 of 1 moesten staan. Het was dan slechts een kwestie van de
+                    numerieke outputs te combineren in OR gates. De laatste stap was het aaneenschakelen van de input,
+                    decoder en 7-Segment Display.
+                </p>
+                <br>
+                <img src="oefening5.png" alt="Decoder en display oefening 5" width="664" height="515" />
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
