@@ -1,0 +1,243 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verslag Project 4 - Robbe en Yousra</title>
+    <!-- Het "u" element (underline) is geherdefinieerd voor overline -->
+    <style type="text/css">
+        u {
+            text-decoration: overline;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #page-grid {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1200px) {
+            #left {
+                width: 300px;
+                position: fixed;
+                /* Fixed Sidebar (stay in place on scroll) */
+                z-index: 1;
+                /* Stay on top */
+                top: 0;
+                /* Stay at the top */
+                left: 0;
+            }
+
+            #right {
+                margin-left: 300px;
+                padding: 0 1rem;
+                max-width: 100%-300px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #page-grid {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+            }
+
+            #left {
+                width: 100%;
+            }
+        }
+
+        #left {
+            padding: 0.2rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .card {
+            margin: 1rem 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        .collaborator {
+            padding: 0.5rem 0;
+        }
+
+        .navitem {
+            padding-left: 0.5rem;
+        }
+
+        .navitem a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            color: grey;
+        }
+
+        #bestanden {
+            max-height: 30%;
+            overflow-y: auto;
+            margin-top: 0.5rem;
+        }
+
+        .bestand {
+            margin-bottom: 0.5rem;
+        }
+
+        .bestand a {
+            color: black;
+        }
+
+        .bestand a:hover {
+            color: grey;
+        }
+
+        #right {
+            width: 100%;
+            height: 100%;
+            padding: 0.2rem;
+        }
+
+        #right #header {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        #right #header #h1 {
+            margin-top: 5em;
+        }
+
+        #right img {
+            width: 40em;
+            height: auto;
+        }
+
+        #content {
+            padding: 1.5rem;
+            background-color: white;
+            margin-bottom: 0.7rem;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        #content hr {
+            margin: 2rem 0;
+        }
+
+        #subtitle hr {
+            width: 10rem;
+            margin: auto;
+            margin-bottom: 5rem;
+            background-color: blue;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="page-grid" class="grid-container">
+        <div id="left">
+            <div id="collaborators" class="card">
+                <b>Dit verslag werd opgesteld door:</b>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Yousra Smits</i><br>
+                    <b>Studentennummer:</b> <i>20201267</i><br>
+                    <b>Email adres:</b> <i>Yousra.Smits@student.uantwerpen.be</i>
+                </div>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Robbe Nooyens</i><br>
+                    <b>Studentennummer:</b> <i>20201010</i><br>
+                    <b>Email adres:</b> <i>Robbe.Nooyens@student.uantwerpen.be</i>
+                </div>
+            </div>
+            <div id="project-info" class="card">
+                <b>Aantal man-uren besteed:</b> <i>25 uur</i><br>
+                <b>Moeilijkheidsgraad:</b> <i>7</i> /10
+            </div>
+            <div id="navigation" class="card">
+                <b>Opdrachten:</b>
+                <div class="navitem">
+                    <a href="#1">16 Bit Register</a>
+                </div>
+                <div class="navitem">
+                    <a href="#2">Register File</a>
+                </div>
+                <div class="navitem">
+                    <a href="#3">Counter</a>
+                </div>
+                <div class="navitem">
+                    <a href="#4">Traffic Lights</a>
+                </div>
+                <div class="navitem">
+                    <a href="#5">Stack</a>
+                </div>
+            </div>
+            <div id="bijlagen" class="card">
+                <b>De oplossing bestaat uit de volgende bestanden:</b>
+                <div id="bestanden">
+                    <div class="bestand">
+                        <a
+                            href="Project4.circ">Project4.circ</a>:
+                        Circuits voor project 4
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="content">
+                <div id="header">
+                    <h1>Project 4: Memory</h1>
+                </div>
+                <div id="subtitle">
+                    <hr>
+                </div>
+                <h3 id="1">16-Bit Register</h3>
+                <p>Een 16-bit register bestaat grotendeels uit 16 D flip-flops. Hun trigger is de falling edge van het kloksignaal (1 => 0). We hebben de de 16 flip-flops als op de tabel gepositioneerd voor elke bit van de 'D'-input en de register output.
+                    Het vermelde kloksignaal is een 1-bit input. De D-input is een 16-bit input voor de data die in de D flip-flops worden opgeslagen als het write-bit op 1 staat. De register-output is een output voor de data op de flip-flops. 
+                    Zoals vermeld is er nog een write-bit die aangeeft of de input moet worden opgeslagen of niet. Ten laatste is er een reset bit die alle D flip-flops die op 1 staan omzet naar 0.
+                    Alle onderdelen tezamen (met splitters) resulteert in dit circuit:
+                    </p>
+                <img src="registergrid.jpg">
+                <img src="register.png">
+                <hr>
+                <h3 id="2">Register File</h3>
+                <p>Om een register file te maken van 16 16-bit registers hebben we een circuit gemaakt die bestaat uit 2 delen: een deel voor de registers te kunnen wijzigen (Write) en een deel voor ze te lezen (Read). 
+                    <br><br><b>Write:</b>
+                    <br>Dit deel geeft de data (in 16-bit) die moet worden opgeslagen. Daarnaast een write bit om te kiezen of de registers gewijzigd kunnen worden of niet en nog een reset bit die alle .
+                    <br>Verder is er nog een 4-bit input (24 = 16) met decoder om te selecteren welke register je wilt overschrijven met de nieuwe input.
+                    <br><br><b>Read:</b> 
+                    <br>Als je data wilt opslaan wil je inderdaad ook weten wat er in je register zit. Hiervoor gebruiken we 2 multiplexers met als inputs de 16 registers en een index om te kiezen welke register je de data van wilt weten. De output is een 16-bit output die de data van de gekozen register geeft.
+                    </p>
+                <img src="registerfile.png">
+                <hr>
+                <h3 id="3">Counter</h3>
+                <p>Voor een counter heb je inderdaad een kloksignaal nodig voor de register. Aan deze register wordt steeds 1 opgeteld, dit gebeurt aan de hand van de 16-bit CLA van project 2. Aan deze CLA hangt er een binaire 1 en de output van de register. Het optellen gebeurt bij elk kloksignaal zolang dat de register-output kleiner is dan de gegeven D. Deze D is zelf te kiezen. </p>
+                <img src="counter.png">
+                <hr>
+                <h3 id="4">Traffic Lights</h3>
+                <p>Aan de hand van onze counter van de vorige oefening kunnen we een verkeerslichtensysteem maken. Aan de counter geven we de maximum waarde die je counter kan aannemen en het kloksignaal van het klokonderdeel in Logisim. Bij het eerste verkeerslicht zijn de tijdstippen wanneer het licht verandert: 8 (groen - geel), 12 (geel - rood) en 28 (of 0) (rood - groen). Bij het tweede is dit 14 ( rood - groen), 22 (groen - geel) en 26 (geel - rood).</p>
+                <img src="trafficlights1.png">
+                <p>Bij het eerste verkeerslicht is 28 ook gelijk aan nul dus hebben we enkel 7 en 11 nodig. Bij 8 en 12 zijn de lampen al een andere kleur dus moet de gele lamp activeren na 7, (idem bij 11). 
+                    We werken op de zelfde manier bij de 2de lamp en voegen nog de logische poorten toe, zo komen we op volgend circuit:
+                    </p>
+                <img src="trafficlights2.png">
+                <hr>
+                <h3 id="5">Stack</h3>
+                <p>De bonusopdracht van dit project is het maken van een stack. De load input van het RAM element staat altijd op 1 om standaard het bovenste element van de stack terug te geven. Het enige probleem dat we hadden was dat de top van de stack niet altijd correct werd teruggegeven. Dit hebben we opgelost door een multiplexer toe te voegen die ofwel het juiste adres doorlaat om naar te schrijven ofwel het adres - 1 doorlaat om het bovenste element te geven.</p>
+                <img src="stack.jpg">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
