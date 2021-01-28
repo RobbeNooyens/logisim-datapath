@@ -1,0 +1,36 @@
+## Programma die array sorteert
+# array in r0 tot r10 (max array size is dus 10)
+# controlewaarden van r10 tot r15
+    # count = r10 (van aantal gesorteerde items)
+    # max size = r11
+    # kleinste gesorteerde item = r12
+    # testresults = r13
+    # nummer 1 = r14
+
+## Werking
+# Programma gaat over de array en vergelijkt alle getallen in niet gesorteerd deel van de array
+# Als het programma aankomt bij het gesorteerde deel wordt het grootste getal in het ongesorteerde 
+# deel in het gesorteerde deel geplaatst. Daarna loopt het programma
+
+add rd rd 0xa        #rd = r10
+zero rd        #r10 = 0
+add rd rd 0x1        #rd = r11
+ori rd 0xa        #r11 = 10 (max size array)
+add rd rd 0x3        #rd = r14 
+ori rd 0x1        #r14 = 1
+sub rd rd 0xe        #rd = r0
+
+        #getting biggest item
+cp rs rd
+add rd rd 0x1
+cp rt rd
+
+
+        # main
+jal 0x0            #return address is begin van loop
+cp rs rd         #rs = r0
+add rd rd 0x1        #rd = r1
+cp rt rd        #rt = r1
+sub rd rd 0x1        #rd = r0
+add rd rd 0xd        #rd = r13
+eq rd rs rt

@@ -1,0 +1,15 @@
+LOADMEM
+# Initialize
+zero r5
+ori r6 1
+sw r5 r5 0
+sw r6 r6 0
+ori r7 1
+# Loop
+lw r1 r5 0
+lw r2 r7 0
+add r3 r1 r2
+sw r3 r7 1
+add r5 r5 r6
+add r7 r7 r6
+j 5

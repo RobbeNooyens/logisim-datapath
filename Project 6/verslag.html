@@ -1,0 +1,231 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verslag Project 6 - Robbe en Yousra</title>
+    <!-- Het "u" element (underline) is geherdefinieerd voor overline -->
+    <style type="text/css">
+        u {
+            text-decoration: overline;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #page-grid {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1200px) {
+            #left {
+                width: 300px;
+                position: fixed;
+                /* Fixed Sidebar (stay in place on scroll) */
+                z-index: 1;
+                /* Stay on top */
+                top: 0;
+                /* Stay at the top */
+                left: 0;
+            }
+
+            #right {
+                margin-left: 300px;
+                padding: 0 1rem;
+                max-width: 100%-300px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #page-grid {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+            }
+
+            #left {
+                width: 100%;
+            }
+        }
+
+        #left {
+            padding: 0.2rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .card {
+            margin: 1rem 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        .collaborator {
+            padding: 0.5rem 0;
+        }
+
+        .navitem {
+            padding-left: 0.5rem;
+        }
+
+        .navitem a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            color: grey;
+        }
+
+        #bestanden {
+            max-height: 30%;
+            overflow-y: auto;
+            margin-top: 0.5rem;
+        }
+
+        .bestand {
+            margin-bottom: 0.5rem;
+        }
+
+        .bestand a {
+            color: black;
+        }
+
+        .bestand a:hover {
+            color: grey;
+        }
+
+        #right {
+            width: 100%;
+            height: 100%;
+            padding: 0.2rem;
+        }
+
+        #right #header {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        #right #header #h1 {
+            margin-top: 5em;
+        }
+
+        #right img {
+            width: 40em;
+            height: auto;
+        }
+
+        #content {
+            padding: 1.5rem;
+            background-color: white;
+            margin-bottom: 0.7rem;
+            box-shadow: 5px 6px #cccccc;
+        }
+
+        #content hr {
+            margin: 2rem 0;
+        }
+
+        #subtitle hr {
+            width: 10rem;
+            margin: auto;
+            margin-bottom: 5rem;
+            background-color: blue;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="page-grid" class="grid-container">
+        <div id="left">
+            <div id="collaborators" class="card">
+                <b>Dit verslag werd opgesteld door:</b>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Yousra Smits</i><br>
+                    <b>Studentennummer:</b> <i>20201267</i><br>
+                    <b>Email adres:</b> <i>Yousra.Smits@student.uantwerpen.be</i>
+                </div>
+                <div class="collaborator">
+                    <b>Naam:</b> <i>Robbe Nooyens</i><br>
+                    <b>Studentennummer:</b> <i>20201010</i><br>
+                    <b>Email adres:</b> <i>Robbe.Nooyens@student.uantwerpen.be</i>
+                </div>
+            </div>
+            <div id="project-info" class="card">
+                <b>Aantal man-uren besteed:</b> <i>15 uur</i><br>
+                <b>Moeilijkheidsgraad:</b> <i>8</i> /10
+            </div>
+            <div id="navigation" class="card">
+                <b>Opdrachten:</b>
+                <div class="navitem">
+                    <a href="#1">Control Unit</a>
+                </div>
+                <div class="navitem">
+                    <a href="#2">Immediate</a>
+                </div>
+                <div class="navitem">
+                    <a href="#3">Address Unit</a>
+                </div>
+                <div class="navitem">
+                    <a href="#4">Full Datapath</a>
+                </div>
+            </div>
+            <div id="bijlagen" class="card">
+                <b>De oplossing bestaat uit de volgende bestanden:</b>
+                <div id="bestanden">
+                    <div class="bestand">
+                        <a
+                            href="FD_Group42.circ">FD_Group42.circ</a>:
+                        Full Datapath
+                    </div>
+                    <div class="bestand">
+                        <a
+                            href="SD_Group42.circ">SD_Group42.circ</a>:
+                        Simple Datapath from Project 5
+                    </div>
+                    <div class="bestand">
+                        <a
+                            href="ALU_Group42.circ">ALU_Group42.circ</a>:
+                        ALU from Project 3
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="content">
+                <div id="header">
+                    <h1>Project 6: Full Datapath</h1>
+                </div>
+                <div id="subtitle">
+                    <hr>
+                </div>
+                <h3 id="1">Control Unit</h3>
+                <p>Om het datapath overzichtelijk te maken voegden we enkele custom units toe. De eerste unit is de control unit. Deze krijgt een instructie en de waarde uit het rd register en geeft verschillende handige outputs. De outputs dienen als een soort van switches om bepaalde waarden aan of uit te zetten en zijn makkelijk te gebruiken door hun naam. Er is enkel een immediate als de eerste vier bits groter zijn dan 9. De ALU operatie zijn bits 0-3 als het een Unary operation is en bits 12-15 als het een binary operation is. De code wordt OR of SLL indien de instructie ori of lui is.</p>
+                <img src="controlunit.jpg">
+                <hr>
+                <h3 id="2">Immediate</h3>
+                <p>De tweede unit is de Immediate unit. Het berekent de immediate waarde aan de hand van een instructie. De immediate waarde zit namelijk niet in elke instructie op dezelfde plek.</p>
+                <img src="immediate.jpg">
+                <hr>
+                <h3 id="3">Address Unit</h3>
+                <p>De address unit is geen echte unit die we moesten implementeren. We hebben deze toch toegevoegd omdat het net zoals de control unit de logica behandeld op basis van een instructie. Het zorgt ervoor dat de juiste addressen aan de register file gegeven worden.</p>
+                <img src="addressunit.jpg">
+                <hr>
+                <h3 id="4">Full Datapath</h3>
+                <p>Nu we alle units gemaakt hebben is het tijd om ze bij elkaar te voegen. We verbinden de instructie met de control unit, de address unit en de immediate. Ook de program counter heeft een upgrade gekregen tegenover het simple datapath. De branch relative en branch absolute input komen van de control unit. Het target adres is niet langer een constante 0, maar komt nu van multiplexer die een waarde doorlaat op basis van de soort jump instructie.</p>
+                <img src="fulldatapath.jpg">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
